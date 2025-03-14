@@ -168,3 +168,6 @@ chunks = splitter.split_text(document)
 
 - **Technical docs (Markdown/HTML):** MarkdownTextSplitter /
   HTMLHeaderTextSplitter
+
+
+Reference - https://www.analyticsvidhya.com/blog/2025/02/types-of-chunking-for-rag-systems/
