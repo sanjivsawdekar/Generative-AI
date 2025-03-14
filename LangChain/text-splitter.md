@@ -4,7 +4,7 @@ Besides **RecursiveCharacterTextSplitter**, there are several other
 **text splitters** available in **LangChain** and other libraries for
 RAG systems. Here’s a list of some commonly used ones:
 
-**1. CharacterTextSplitter (Basic)**
+## 1. CharacterTextSplitter (Basic)
 
 - Splits text based on characters (e.g., \n, spaces).
 
@@ -27,7 +27,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** Simple documents, blogs, raw text.
 
-**2. TokenTextSplitter (Token-Based)**
+## 2. TokenTextSplitter (Token-Based)
 
 - Splits based on **LLM tokens** instead of characters.
 
@@ -47,7 +47,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** Ensuring chunk sizes match LLM context limits.
 
-**3. NLTKTextSplitter (Sentence-Based)**
+## 3. NLTKTextSplitter (Sentence-Based)
 
 - Uses **NLTK** to split by sentences, preventing mid-sentence breaks.
 ```
@@ -59,7 +59,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** News articles, structured reports.
 
-**4. SpacyTextSplitter (Linguistic-Based)**
+## 4. SpacyTextSplitter (Linguistic-Based)
 
 - Uses **SpaCy** for sentence-based chunking.
 
@@ -73,7 +73,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** NLP-heavy applications, multi-language text.
 
-**5. MarkdownTextSplitter (Markdown Docs)**
+## 5. MarkdownTextSplitter (Markdown Docs)
 
 - Splits text while **preserving Markdown structure** (# Headings, -
   Lists, \*\*Bold\*\*).
@@ -86,7 +86,7 @@ chunks = splitter.split_text(markdown_document)
 ```
 ✅ **Best for:** Documentation, technical blogs.
 
-**6. HTMLHeaderTextSplitter (Web Content)**
+## 6. HTMLHeaderTextSplitter (Web Content)
 
 - Splits text based on **HTML tags** (\<h1\>, \<p\>, etc.).
 
@@ -104,7 +104,7 @@ chunks = splitter.split_text(html_document)
 ```
 ✅ **Best for:** Web scraping, FAQs, structured articles.
 
-**7. SentenceTransformersTextSplitter (Semantic Chunking)**
+## 7. SentenceTransformersTextSplitter (Semantic Chunking)
 
 - Uses **SBERT** embeddings to split text **by meaning**, not just size.
 
@@ -124,7 +124,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** Legal, medical, and structured documents.
 
-**8. TiktokenTextSplitter (OpenAI Token-Aware)**
+## 8. TiktokenTextSplitter (OpenAI Token-Aware)
 
 - Uses **OpenAI’s tiktoken** for precise token splitting.
 
@@ -144,7 +144,7 @@ chunks = splitter.split_text(document)
 ```
 ✅ **Best for:** OpenAI API calls, optimizing token usage.
 
-**Comparison Table**
+# Comparison Table
 
 | **Splitter** | **Method** | **Best for** |
 |----|----|----|
