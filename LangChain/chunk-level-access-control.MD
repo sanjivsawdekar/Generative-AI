@@ -76,7 +76,7 @@ Here's a breakdown of strategies:
 
 \[3\] [<u>https://www.pinecone.io/learn/rag-access-control/</u>](https://www.pinecone.io/learn/rag-access-control/#:~:text=Role%20based%20access%20control%20(RBAC)%20%2D%20access,it%20can%20still%20be%20complex%20to%20manage.)
 
-**Chunk level Access Control**
+#Chunk level Access Control
 
 In a Retrieval-Augmented Generation (RAG) system, restricting access to
 specific document chunks for certain users requires an **access control
@@ -96,10 +96,6 @@ permissions before passing them to the LLM.
 
     - Example:
 
-> json
->
-> CopyEdit
->
 > {
 >
 > "chunk": "This is confidential information.",
@@ -139,7 +135,7 @@ For **Weaviate**, use a filter to retrieve only authorized chunks:
 
 python
 
-CopyEdit
+
 
 query = {
 
@@ -173,7 +169,7 @@ teachers:
 
 python
 
-CopyEdit
+
 
 if user.role == "student" and chunk.category == "exam_answers":
 
@@ -207,9 +203,9 @@ and decrypt only if the user has the right token.
 If some chunks are mistakenly retrieved, you can instruct the LLM to
 ignore unauthorized content:
 
-plaintext
 
-CopyEdit
+
+
 
 "If the document contains information labeled as 'confidential,' do not
 display it."
