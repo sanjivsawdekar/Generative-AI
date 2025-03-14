@@ -158,7 +158,7 @@ chunks = splitter.split_text(document)
 | SentenceTransformersTextSplitter | Semantic-based | Legal, structured docs |
 | TiktokenTextSplitter | OpenAI token-aware | GPT models |
 
-**Which one should you use?**
+## Which one should you use?
 
 - **Short documents:** CharacterTextSplitter
 
