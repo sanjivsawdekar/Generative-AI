@@ -1,4 +1,4 @@
-#Types of Text Splitters
+# Types of Text Splitters
 
 Besides **RecursiveCharacterTextSplitter**, there are several other
 **text splitters** available in **LangChain** and other libraries for
