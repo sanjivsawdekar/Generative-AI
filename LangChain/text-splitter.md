@@ -1,4 +1,4 @@
-**Types of Text Splitters**
+#Types of Text Splitters
 
 Besides **RecursiveCharacterTextSplitter**, there are several other
 **text splitters** available in **LangChain** and other libraries for
@@ -10,7 +10,7 @@ RAG systems. Here’s a list of some commonly used ones:
 
 - Simpler and faster than RecursiveCharacterTextSplitter but can break
   sentences.
-
+```
 from langchain.text_splitter import CharacterTextSplitter
 
 splitter = CharacterTextSplitter(
@@ -24,7 +24,7 @@ chunk_overlap=50
 )
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** Simple documents, blogs, raw text.
 
 **2. TokenTextSplitter (Token-Based)**
@@ -32,7 +32,7 @@ chunks = splitter.split_text(document)
 - Splits based on **LLM tokens** instead of characters.
 
 - Useful when working with OpenAI models to fit within token limits.
-
+```
 from langchain.text_splitter import TokenTextSplitter
 
 splitter = TokenTextSplitter(
@@ -44,19 +44,19 @@ chunk_overlap=50
 )
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** Ensuring chunk sizes match LLM context limits.
 
 **3. NLTKTextSplitter (Sentence-Based)**
 
 - Uses **NLTK** to split by sentences, preventing mid-sentence breaks.
-
+```
 from langchain.text_splitter import NLTKTextSplitter
 
 splitter = NLTKTextSplitter()
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** News articles, structured reports.
 
 **4. SpacyTextSplitter (Linguistic-Based)**
@@ -64,26 +64,26 @@ chunks = splitter.split_text(document)
 - Uses **SpaCy** for sentence-based chunking.
 
 - More **accurate** than NLTKTextSplitter for some languages.
-
+```
 from langchain.text_splitter import SpacyTextSplitter
 
 splitter = SpacyTextSplitter()
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** NLP-heavy applications, multi-language text.
 
 **5. MarkdownTextSplitter (Markdown Docs)**
 
 - Splits text while **preserving Markdown structure** (# Headings, -
   Lists, \*\*Bold\*\*).
-
+```
 from langchain.text_splitter import MarkdownTextSplitter
 
 splitter = MarkdownTextSplitter()
 
 chunks = splitter.split_text(markdown_document)
-
+```
 ✅ **Best for:** Documentation, technical blogs.
 
 **6. HTMLHeaderTextSplitter (Web Content)**
@@ -91,7 +91,7 @@ chunks = splitter.split_text(markdown_document)
 - Splits text based on **HTML tags** (\<h1\>, \<p\>, etc.).
 
 - Extracts structured sections from webpages.
-
+```
 from langchain.text_splitter import HTMLHeaderTextSplitter
 
 splitter = HTMLHeaderTextSplitter(
@@ -101,7 +101,7 @@ headers_to_split_on=\[("h1", "Title"), ("h2", "Subsection")\]
 )
 
 chunks = splitter.split_text(html_document)
-
+```
 ✅ **Best for:** Web scraping, FAQs, structured articles.
 
 **7. SentenceTransformersTextSplitter (Semantic Chunking)**
@@ -109,7 +109,7 @@ chunks = splitter.split_text(html_document)
 - Uses **SBERT** embeddings to split text **by meaning**, not just size.
 
 - Ensures semantically coherent chunks.
-
+```
 from langchain.text_splitter import SentenceTransformersTextSplitter
 
 splitter = SentenceTransformersTextSplitter(
@@ -121,7 +121,7 @@ chunk_size=256
 )
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** Legal, medical, and structured documents.
 
 **8. TiktokenTextSplitter (OpenAI Token-Aware)**
@@ -129,7 +129,7 @@ chunks = splitter.split_text(document)
 - Uses **OpenAI’s tiktoken** for precise token splitting.
 
 - Ensures chunks fit within **GPT’s context window**.
-
+```
 from langchain.text_splitter import TiktokenTextSplitter
 
 splitter = TiktokenTextSplitter(
@@ -141,7 +141,7 @@ chunk_size=1000
 )
 
 chunks = splitter.split_text(document)
-
+```
 ✅ **Best for:** OpenAI API calls, optimizing token usage.
 
 **Comparison Table**
