@@ -1,0 +1,1 @@
+# Note Taking Agent with LlamaIndex
