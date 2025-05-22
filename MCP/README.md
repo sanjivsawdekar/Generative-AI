@@ -1,7 +1,8 @@
 # Model Context Protocol
 
 Check more details about MCP on below links.
-https://modelcontextprotocol.io/introduction
+
+Introduction - https://modelcontextprotocol.io/introduction
 
 Core architecture - https://modelcontextprotocol.io/docs/concepts/architecture
 
