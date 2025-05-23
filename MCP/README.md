@@ -21,3 +21,12 @@ MCP Servers expose 3 capabilities-
 3. Prompts
 
 Glue code is written & maintained by MCP Server.
+
+Ready to use MCP desktop clients:
+1. Claude Desktop
+2. Claude Code
+3. Cursor
+4. Windsurf (Codium)
+5. Cline (VS Code extension)
+
+You can use above clients or write your own host application with custom MCP client to test your custom MCP server.
