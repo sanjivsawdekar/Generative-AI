@@ -1,6 +1,7 @@
 # Multi Agent Architecture
 
-![image](https://github.com/user-attachments/assets/4d2018f8-d14d-4087-90af-a634292c890b)
+![image](https://github.com/user-attachments/assets/d4a1e0e8-edf8-407e-a4d5-89cf483616c8)
+
 
 # Graph
 
