@@ -1,29 +1,35 @@
+import asyncio
 from fastmcp.client import Client
 from fastmcp.client.transports import StreamableHttpTransport
-import asyncio
 
 async def main():
-    # Connect to running MCP server over Streamable HTTP
     transport = StreamableHttpTransport(url="http://localhost:8765/mcp")
 
-    # Create client with that transport
     async with Client(transport=transport) as client:
-        # List tools
-        tools = await client.list_tools()
-        #print("Available tools:", [t.name for t in tools])
-        print("Available tools with description:")
-        for tool in tools:
-            # tool.name → tool name
-            # tool.description → description (set in server with @tool docstring)
-            print(f"- {tool.name}: {tool.description}")
-            
-        # Call greet
-        res1 = await client.call_tool("greet", {"name": "Sanjiv"})
-        print("\ngreet('Sanjiv') → ", res1.structured_content['result'])
+        print("\n=== Connected to MCP server ===")
 
-        # Call add_numbers
-        res2 = await client.call_tool("add_numbers", {"a": 5, "b": 10})
-        print("\nadd_numbers(5, 10) →", res2.structured_content['result'])
+        tools = await client.list_tools()
+        print("\n=== Available Tools ===")
+        for t in tools:
+            print(f"- {t.name}: {t.description}")
+
+        res = await client.call_tool("process_json", {
+                "payload": {"user": "alice", "values": [1, 2, 3], "meta": {"active": True}}
+        })
+        print("\n=== Raw Result ===")
+        print(res)
+
+        print("\n=== Processed Result by fields ===")
+        if res.content:
+            for item in res.content[0]:
+                    print(f"{item[0]}: {item[1]}")
+                    #print(item[0] , "=",item[1])
+        else:
+            print("No content returned")
+
+        if res.structured_content:
+            print("\n=== Structured JSON Output ===", type(res.structured_content))
+            print(res.structured_content)
 
 if __name__ == "__main__":
     asyncio.run(main())
